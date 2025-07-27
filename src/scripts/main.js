@@ -4,8 +4,6 @@ const largeImg = document.querySelector('#largeImg');
 const thumbs = document.querySelector('#thumbs');
 
 thumbs.addEventListener('click', function (e) {
-  e.preventDefault();
-
   let target = e.target;
 
   if (target.tagName === 'IMG') {
@@ -13,6 +11,7 @@ thumbs.addEventListener('click', function (e) {
   }
 
   if (target && target.tagName === 'A' && target.href) {
+    e.preventDefault();
     largeImg.src = target.href;
   }
 });
